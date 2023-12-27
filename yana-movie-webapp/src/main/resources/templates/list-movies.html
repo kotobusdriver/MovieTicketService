@@ -1,0 +1,37 @@
+<html>
+
+<head>
+    <title>Movie Database - List Movies</title>
+</head>
+
+<body>
+<font color="red"><span th:text="${errorMessage}"></span></font>
+    <table border="1">
+        <thead>
+            <tr>
+                <td>Session ID</td>
+                <td>Movie ID</td>
+                <td>Movie Name</td>
+                <td>Director's Surname</td>
+                <td>Platform Name</td>
+                <td>Theatre ID</td>
+                <td>Timeslot</td>
+                <td>Prequels</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="movie: ${movies}">
+                <td th:text="${movie.sessionId}" />
+                <td th:text="${movie.movieId}" />
+                <td th:text="${movie.movieName}" />
+                <td th:text="${movie.directorSurname}" />
+                <td th:text="${movie.platformName}" />
+                <td th:text="${movie.theatreId}" />
+                <td th:text="${movie.timeslot}" />
+                <td th:text="${movie.predecessorsList}" />
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

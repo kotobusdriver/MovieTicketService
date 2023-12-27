@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <title>Movie Database - Show Average Rating of a Movie</title>
+</head>
+
+<body>
+    <font color="red"><span th:text="${errorMessage}"></span></font>
+    <br>
+    <form method="post">
+        Movie ID: <input type="number" name="movieId"/>
+        <br>
+        <input type="submit"/>
+    </form>
+    <table border="1">
+        <thead>
+        <tr>
+            <td>Movie ID</td>
+            <td>Movie Name</td>
+            <td>Overall Rating</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:if="${movie} != null">
+            <td th:text="${movie.movieId}"/>
+            <td th:text="${movie.movieName}"/>
+            <td th:text="${movie.averageRating}"/>
+        </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

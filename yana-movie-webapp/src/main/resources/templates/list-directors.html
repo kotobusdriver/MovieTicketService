@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <title>Movie Database - List Directors</title>
+</head>
+
+<body>
+<font color="red"><span th:text="${errorMessage}"></span></font>
+    <table border="1">
+        <thead>
+            <tr>
+                <td>Director Username</td>
+                <td>Name</td>
+                <td>Surname</td>
+                <td>Nationality</td>
+                <td>Platform</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="director: ${directors}">
+                <td th:text="${director.username}" />
+                <td th:text="${director.name}" />
+                <td th:text="${director.surname}" />
+                <td th:text="${director.nationality}" />
+                <td th:text="${director.platform.id}" />
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

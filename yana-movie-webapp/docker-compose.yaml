@@ -1,0 +1,34 @@
+version: '3'
+
+services:
+  webapp:
+    image: maven:3.9.0-eclipse-temurin-17-alpine
+    working_dir: /build
+    volumes:
+      - ./:/build
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/movie-database
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgres
+    command: >
+      bash -c "mvn clean package && java -jar ./target/movie-webapp.jar"
+
+  db:
+    image: 'postgres:13.1-alpine'
+    container_name: db
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=movie-database
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - db:/var/lib/postgresql/data
+
+volumes:
+  db:
+    driver: local

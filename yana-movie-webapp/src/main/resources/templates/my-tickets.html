@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <title>Movie Database - List My Tickets</title>
+</head>
+
+<body>
+<font color="red"><span th:text="${errorMessage}"></span></font>
+    <table border="1">
+        <thead>
+            <tr>
+                <td>Movie ID</td>
+                <td>Movie Name</td>
+                <td>Session ID</td>
+                <td>My Rating</td>
+                <td>Overall Rating</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="ticket: ${tickets}">
+                <td th:text="${ticket.movieId}" />
+                <td th:text="${ticket.movieName}" />
+                <td th:text="${ticket.sessionId}" />
+                <td th:text="${ticket.rating}" />
+                <td th:text="${ticket.averageRating}" />
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

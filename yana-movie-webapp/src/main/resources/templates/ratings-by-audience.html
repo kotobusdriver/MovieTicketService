@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <title>Movie Database - Find Ratings by Audience Username</title>
+</head>
+
+<body>
+    <font color="red"><span th:text="${errorMessage}"></span></font>
+    <br>
+    <form method="post">
+        Audience username : <input type="text" name="audienceUsername"/>
+        <br>
+        <input type="submit"/>
+    </form>
+    <table border="1">
+        <thead>
+            <tr>
+                <td>Movie ID</td>
+                <td>Movie Name</td>
+                <td>Rating</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="rating: ${ratings}">
+                <td th:text="${rating.movie.movieId}" />
+                <td th:text="${rating.movie.movieName}" />
+                <td th:text="${rating.rating}" />
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

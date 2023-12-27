@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Movie Web Application - Database Manager Interface</title>
+    </head>
+
+    <body>
+        Welcome <span th:text="${username}">!!</span>
+        <br>
+
+        <font color="red"><span th:text="${operationStatus}"></span></font>
+        <br>
+        <a href="/add-audience">Click here</a> to add an audience.<br>
+        <a href="/add-director">Click here</a> to add a director.<br>
+        <a href="/change-platform">Click here</a> to change a director's platform.<br>
+        <a href="/delete-audience">Click here</a> to delete an audience.<br>
+        <a href="/list-directors">Click here</a> to list all directors.<br>
+        <a href="/ratings-by-audience">Click here</a> to list ratings by audience username.<br>
+        <a href="/movie-avg-rating">Click here</a> to view average rating of a movie.<br>
+        <a href="/movies-by-director">Click here</a> to list movies by a director.<br>
+    </body>
+</html>

@@ -1,0 +1,26 @@
+<html>
+
+<head>
+    <title>Movie Database - Add Movie</title>
+</head>
+
+<body>
+<font color="red"><span th:text="${errorMessage}"></span></font>
+<form method="post">
+    Movie ID : <input type="text" name="movieId"/>
+    <br>
+    Movie Name : <input type="text" name="movieName"/>
+    <br>
+    Theatre ID : <input type="text" name="theatreId"/>
+    <br>
+    Timeslot : <input type="number" name="timeslot"/>
+    <br>
+    Duration : <input type="number" name="duration"/>
+    <br>
+    Screening Date : <input type="date" name="date"/>
+    <br>
+    <input type="submit"/>
+</form>
+</body>
+
+</html>

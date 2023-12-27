@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <title>Movie Database - List Movies By Director</title>
+</head>
+
+<body>
+<font color="red"><span th:text="${errorMessage}"></span></font>
+<br>
+<form method="post">
+    Director username : <input type="text" name="directorUsername"/>
+    <br>
+    <input type="submit"/>
+</form>
+<table border="1">
+    <thead>
+    <tr>
+        <td>Movie ID</td>
+        <td>Movie Name</td>
+        <td>Theatre ID</td>
+        <td>Timeslot</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="movie: ${movies}">
+        <td th:text="${movie.movieId}"/>
+        <td th:text="${movie.movieName}"/>
+        <td th:text="${movie.theatreId}"/>
+        <td th:text="${movie.timeslot}"/>
+    </tr>
+    </tbody>
+</table>
+</body>
+
+</html>
